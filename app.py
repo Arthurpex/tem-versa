@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from flask import Flask, render_template
 load_dotenv()
 
-# URL2 = "https://portal.sensebike.com.br/glstorefront/glsense/pt/BRL/Cor/BICICLETA-CRITERIUM-COMP-2021-22---SENSE/p/160639_base/orderForm?warehouseCode=1101"
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 VERSA_COMP = os.getenv('VERSA_COMP')
 VERSA_EVO = os.getenv('VERSA_EVO')
@@ -40,13 +40,11 @@ def create_app(test_config=None):
     @app.route('/')
     def comp() -> dict:
         data = get_stock_values(VERSA_COMP)
-        # data = {'size': '58', 'qtd': 10}
         return render_template('comp.html', data=data, url=VERSA_COMP)
 
     @app.route('/evo')
     def evo() -> dict:
         data = get_stock_values(VERSA_EVO)
-        # data = {'size': '58', 'qtd': 10}
         return render_template('evo.html', data=data, url=VERSA_EVO)
 
     return app
