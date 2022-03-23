@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sense Versa Comp</title>
+</head>
+<body>
+<div style="text-align: center">
+        <div style="font-size: 36px">
+        <p style="font-weight: bold; font-size: 48px">
+            Já chegou a Sense Versa Comp?
+        </p>
+        {% for i in data %}
+
+        {% if i.qtd %}
+        <p>  ✅ Tamanho {{ i.size }}cm → {{ i.qtd }} unidades</p>
+        {% endif %}
+        {% if not i.qtd %}
+        <p> ❌ Tamanho {{ i.size }}cm → Sem estoque </p>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div>
+            <img src="https://sensebike.com.br/storage/2020/12/F78F371C-A940-4EE7-BDDD-E7FF08BBDF0C-1024x717.jpeg">
+<!--        <a target="_blank" style="font-size: 36px" href="{{url}}"><p>Mais informações</p></a>-->
+        <a style="font-size: 36px" href="/evo"><p>Versa Evo</p></a>
+<!--        <a style="font-size: 36px" href={{url}}><p>Criterium Comp</p></a>-->
+    </div>
+
+</div>
+
+
+</body>
+</html>
